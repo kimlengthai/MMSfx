@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.*?>
+
+<VBox fx:controller = "controller.SuperMarketController" alignment="center" spacing="10" styleClass="background" prefHeight="500.0" prefWidth="700.0"
+      xmlns:fx="http://javafx.com/fxml/1">
+    <stylesheets>
+        <URL value="@mmsfx.css"/>
+    </stylesheets>
+    <VBox alignment = "TOP_LEFT" >
+    <Text styleClass="label-h2" text = "Filters" >
+    </Text>
+    </VBox>
+
+<HBox spacing = "10" alignment = "TOP_CENTER">
+    <Label styleClass="label-opac" fx:id = "Name"    text = "Name:"    />
+    <TextField fx:id="name"  promptText = "Filter by name"                  />
+    <Label styleClass="label-opac" fx:id = "Email"   text = "Email:"   />
+    <TextField fx:id="email" promptText = "Filter by email"                 />
+</HBox>
+
+<padding>
+    <Insets bottom = "10.0" left = "10.0" right = "10.0" top = "10.0"/>
+</padding>
+
+<Separator/>
+
+<TableView fx:id = "membershipTv">
+    <placeholder>
+        <Label text = "Memberships list is not loaded" />
+    </placeholder>
+    <columns>
+        <TableColumn  fx:id="NameC" text = "Name">           
+        </TableColumn>
+        <TableColumn  fx:id="EmailC" text = "Email">           
+        </TableColumn>
+        <TableColumn  fx:id="PhoneC" text = "Phone">                    
+        </TableColumn>
+    </columns>
+</TableView>
+
+<HBox spacing = "5" alignment = "CENTER">
+        <Button fx:id = "add" text = "Add" onAction = "#HandleAdd" />
+        <Button styleClass = "button"  fx:id = "delete"  text = "Delete" disable="true" onAction = "#HandleDelete" />
+        <Button styleClass = "button"  fx:id = "select"  text = "Select" disable="true" onAction = "#HandleSelect" />
+        <Button styleClass = "button"  fx:id = "slip"    text = "SLIP"   disable="true" onAction = "#HandleSLIP"   />
+        <Button fx:id = "report" text = "Report" onAction = "#HandleReport"  />
+        <Button fx:id = "close"  text = "Close" onAction = "#HandleClose" />        
+    </HBox>
+    
+</VBox>

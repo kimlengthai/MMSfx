@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.VBox?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.GridPane?>
+
+<VBox fx:controller="controller.MMSController" alignment="TOP_CENTER" prefHeight="618.0" prefWidth="1300.0" styleClass="background" spacing="10"
+      xmlns:fx="http://javafx.com/fxml/1" >
+    
+    <TableView fx:id = "reportTv">
+        
+    <placeholder>
+        <Label text = "Memberships list is not loaded" />
+    </placeholder>
+    
+    <columns>
+        <TableColumn  fx:id="NameA" text = "Name">           
+        </TableColumn>
+        <TableColumn  fx:id="TypeA" text = "Type">           
+        </TableColumn>
+        <TableColumn  fx:id="ExpenseA" text = "Expense">                    
+        </TableColumn>
+        <TableColumn  fx:id="CreditsA" text = "Credits">           
+        </TableColumn>
+        <TableColumn  fx:id="GasdeductionRateA" text = "GasdeductionRate">           
+        </TableColumn>
+        <TableColumn  fx:id="DeductionRateA" text = "DeductionRate">                    
+        </TableColumn>
+        <TableColumn  fx:id="payPerCreditA" text = "payPerCredit">           
+        </TableColumn>
+        <TableColumn  fx:id="DollarAvailableA" text = "DollarAvailable">           
+        </TableColumn>
+    </columns>
+    
+    </TableView>
+    
+    <Separator/>
+    
+    <GridPane alignment = "CENTER" GridPane.columnSpan = "4">       
+        <padding>           
+            <Insets top="10" bottom="10" left="10" right="10" />
+        </padding>
+          <Label styleClass="label"  text = "Total Expense:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+          <Text fx:id="expense" styleClass="text-out" GridPane.rowIndex="0" GridPane.columnIndex="1"/> 
+          <Label styleClass="label"  text = "AverageGasdeductionRate:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+          <Text fx:id="GasdeductionRate" styleClass="text-out" GridPane.rowIndex="1" GridPane.columnIndex="1"/>                                            
+          <Label styleClass="label"  text = "AvgPayPerCredit:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+          <Text fx:id="payPerCredit" styleClass="text-out" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+          <Label styleClass="label"  text = "Total Credits:" GridPane.rowIndex="0" GridPane.columnIndex="4"/>
+          <Text fx:id="totalCredits" styleClass="text-out" GridPane.rowIndex="0" GridPane.columnIndex="6"/>
+          <Label styleClass="label"  text = "AvgDeductionRate:" GridPane.rowIndex="1" GridPane.columnIndex="4"/>
+          <Text fx:id="deductionRate" styleClass="text-out" GridPane.rowIndex="1" GridPane.columnIndex="6"/>         
+          <Label styleClass="label"  text = "TotalDollarAvailable:" GridPane.rowIndex="2" GridPane.columnIndex="4"/>   
+          <Text fx:id="DollarAvailable" styleClass="text-out" GridPane.rowIndex="2" GridPane.columnIndex="6"/>
+    </GridPane>
+    
+    <Separator/>
+    
+    <HBox alignment = "BOTTOM_CENTER" >
+        <padding>           
+            <Insets top="10" bottom = "10"/>
+        </padding>
+    <Button styleClass = "button" text = "Close" onAction="#handleCloseReport"/>
+    </HBox>
+    
+    <stylesheets>
+          <URL value="@mmsfx.css"/>
+    </stylesheets>
+    
+</VBox>
